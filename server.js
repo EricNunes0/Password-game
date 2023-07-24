@@ -2,6 +2,7 @@ import express from "express";
 import http from "http";
 import onType from "./public/scripts/onType.js";
 import { Server } from "socket.io";
+import serverless from "serverless-http";
 
 const app = express();
 const server = http.createServer(app);

@@ -4,11 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo da Senha</title>
-    <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/3485/3485677.png"/>
+    <link rel = "icon" href = "svgs/favicon.ico"/>
     <link rel = "stylesheet" href = "input.css"/>
     <script src = "/socket.io/socket.io.js"></script>
 </head>
-<body>
+<body id = "password-body">
+    <div id = "password-background">
+        <ul id = "password-squares-div">
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+            <li class = "password-squares"></li>
+        </ul>
+    </div>
     <div id = "password-page">
         <div id = "password-title-div">
             <h1 id = "password-title">Jogo da Senha</h1>
