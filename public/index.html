@@ -23,6 +23,21 @@
             <li class = "password-squares"></li>
         </ul>
     </div>
+    <div id = "password-absolute">
+        <div id = "password-scrollup-div">
+            <button class = "closed" id = "password-scrollup">
+                <img id = "password-scrollup-svg" src = "svgs/arrowScrollUp.svg"></img>
+            </button>
+        </div>
+        <div id = "password-warning-div">
+            <button class = "closed" id = "password-warning">
+                <img src = "svgs/warning.svg" id = "password-warning-svg"></img>
+                <div id = "password-warning-count-div">
+                    <span id = "password-warning-count">0</span>
+                </div>
+            </button>
+        </div>
+    </div>
     <div id = "password-page">
         <div id = "password-title-div">
             <h1 id = "password-title">Jogo da Senha</h1>
@@ -46,20 +61,21 @@
     <script type = "module">
         import createRuleBlocks from "./scripts/createRuleBlocks.js";
         import onType from "./scripts/onType.js";
+        import scrollUpClick from "./scripts/scrollUpClick.js";
+        import warningClick from "./scripts/warningClick.js";
+        import windowScroll from "./scripts/windowScroll.js";
         createRuleBlocks();
         onType();
-
-        let password = "Oi"
+        scrollUpClick();
+        warningClick();
+        windowScroll();
 
         const socket = io();
-
         socket.on("connect", () => {
             const userId = socket.id;
-            console.log(`${userId} acabou de entrar no jogo!`);
         });
 
         socket.on("type", (state) => {
-            console.log("Olha o que eu recebi", state);
             document.querySelector("#password").value = state;
         });
 

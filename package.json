@@ -1,6 +1,6 @@
 {
   "name": "password",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Jogo da senha",
   "main": "server.js",
   "type": "module",

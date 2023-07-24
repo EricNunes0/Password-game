@@ -144,7 +144,115 @@ label, input {
         opacity: 0;
         border-radius: 50%;
     }
+}
 
+/* Absoluto */
+#password-absolute {
+    pointer-events: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Div do botão de subir página */
+#password-scrollup-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Botão de subir para senha */
+#password-scrollup {
+    pointer-events: all;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    top: 0%;
+    left: calc(50% - calc(50px / 2));
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 10px;
+    opacity: 1;
+    transition: all 0.3s;
+}
+#password-scrollup[class~="closed"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Ícone do botão de subir para senha */
+#password-scrollup-svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Div do botão de aviso de regra */
+#password-warning-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botão de aviso de regra */
+#password-warning {
+    pointer-events: all;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    bottom: 0%;
+    left: calc(50% - calc(50px / 2));
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    opacity: 1;
+    animation: PasswordWarning 1s linear infinite;
+    transition: all 0.3s;
+}
+#password-warning[class~="closed"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Ícone do botão de aviso de regra */
+#password-warning-svg {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* Div do contador */
+#password-warning-count-div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contador de regras não cumpridas */
+#password-warning-count {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+}
+@keyframes PasswordWarning {
+    0%, 100% {
+        filter: none;
+    }
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 5px #f02020);
+    }
 }
 
 /* Título do jogo */
@@ -199,8 +307,8 @@ label, input {
     border-radius: 10px;
     contain: layout;
 }
-#password:active {
-    outline: 1px solid #000;
+#password:focus {
+    outline: 1px solid #000000a0;
 }
 
 /* Alinhar input e contador */
@@ -224,6 +332,7 @@ label, input {
 #password-span {
     position: absolute;
     font-size: 16pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Div das regras */
@@ -328,10 +437,10 @@ label, input {
 
 @media screen and (max-width: 480px) {
     #password {
-        width: 100vw;
+        width: calc(100vw - 80px);
     }
 
     .password-rules-containers {
-        width: 100%;
+        width: calc(100% - 60px);
     }
 }

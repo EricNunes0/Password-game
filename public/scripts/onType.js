@@ -1,7 +1,8 @@
 import disableRuleBlock from "./disableRuleBlock.js";
 import enableRuleBlock from "./enableRuleBlock.js";
 import ruleCheck from "./ruleCheck.js";
-import { playerStats } from "./playerStats.js"; 
+import { playerStats } from "./playerStats.js";
+import warningCalculate from "./warningCalculate.js";
 
 export default function onType() {
     $("#password").keyup(function(k) {
@@ -45,7 +46,6 @@ export default function onType() {
 
         for(const level of levels) {
             //console.log(level.id, level.rule, playerStats);
-            
             if(level.id <= playerStats.level) {
                 $(`#password-rule-${level.id}`).css("display", "block");
             };
@@ -58,5 +58,6 @@ export default function onType() {
                 disableRuleBlock({id: level.id});
             };
         };
+        warningCalculate();
     });
 };

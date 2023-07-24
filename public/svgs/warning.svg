@@ -1,0 +1,18 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="250" y1="50" x2="250" y2="449.999" id="gradient-0">
+      <stop offset="0" style="stop-color: rgba(229, 52, 52, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(159, 20, 20, 1)"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="121.328" y1="59.775" x2="121.328" y2="96.778" id="gradient-1">
+      <stop offset="0" style="stop-color: rgba(51, 51, 51, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(0, 0, 0, 1)"></stop>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="250" y1="50" x2="250" y2="449.999" id="gradient-2">
+      <stop offset="0" style="stop-color: rgba(250, 250, 250, 1)"></stop>
+      <stop offset="1" style="stop-color: rgba(199, 199, 199, 1)"></stop>
+    </linearGradient>
+  </defs>
+  <path d="M 245.945 54.04 Q 249.999 45.959 254.054 54.04 L 448.648 441.918 Q 452.702 449.999 444.594 449.999 L 55.405 449.999 Q 47.297 449.999 51.351 441.918 Z" style="stroke-width: 50px; stroke: url(#gradient-0); fill: url(#gradient-2); fill-opacity: 0.48;" bx:shape="triangle 47.297 45.959 405.405 404.04 0.5 0.02 1@a2650da9"></path>
+  <text style="fill: url(#gradient-1); font-family: Arial, sans-serif; font-size: 33.1px; white-space: pre;" transform="matrix(8.807384, 0, 0, 8.508634, -820.618787, -358.6742)" x="116.73" y="89.792">!</text>
+</svg>

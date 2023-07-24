@@ -5,9 +5,10 @@ export default function createRuleBlocks() {
 
     for(const level of levelsJSON.levels) {
         rulesDiv.append(`
+    <a href = "#password-rule-${level.id}" class = "password-anchors"></a>
     <div class = "password-rules-containers red" id = "password-rule-${level.id}" style = "display: none; opacity: 0;">
         <div class = "password-blocks">
-            <header class = "password-header-containers red" class = "password-header-1">
+            <header class = "password-header-containers red" class = "password-header-${level.id}">
                 <div class = "password-header-flex">
                     <div class = "password-header-icon-divs">
                         <img class = "password-header-icons" src = "../svgs/error.svg"></img>
