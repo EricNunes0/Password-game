@@ -1,0 +1,36 @@
+{
+    "levels": [
+        {
+            "id": 1,
+            "description": "Sua senha precisa ter pelo menos 5 caracteres."
+        },
+        {
+            "id": 2,
+            "description": "Sua senha precisa incluir um número."
+        },
+        {
+            "id": 3,
+            "description": "Sua senha precisa incluir um caractere especial."
+        },
+        {
+            "id": 4,
+            "description": "Sua senha precisa incluir uma letra maiúscula."
+        },
+        {
+            "id": 5,
+            "description": "A soma dos números da sua senha precisa ser igual a 25."
+        },
+        {
+            "id": 6,
+            "description": "Sua senha precisa incluir o nome de um mês do ano."
+        },
+        {
+            "id": 7,
+            "description": "Sua senha precisa incluir ao menos um número primo."
+        },
+        {
+            "id": 8,
+            "description": "Sua senha precisa incluir o nome de um planeta do Sistema Solar."
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" id = "password-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Senha</title>
+    <link rel = "icon" href = "https://cdn-icons-png.flaticon.com/512/3485/3485677.png"/>
+    <link rel = "stylesheet" href = "input.css"/>
+    <script src = "/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id = "password-page">
+        <div id = "password-title-div">
+            <h1 id = "password-title">Jogo da Senha</h1>
+        </div>
+        <div id = "password-game-area">
+            <div id = "password-div">
+                <label for = "password">Insira a sua senha</label>
+                <div id = "password-flex">
+                    <input type = "text" id = "password"></input>
+                    <div id = "password-span-div">
+                        <span id = "password-span">0</span>
+                    </div>
+                </div>
+            </div>
+            <div id = "password-rules-div">
+                
+            </div>
+        </div>
+    </div>
+    <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type = "module">
+        import createRuleBlocks from "./scripts/createRuleBlocks.js";
+        import onType from "./scripts/onType.js";
+        createRuleBlocks();
+        onType();
+
+        let password = "Oi"
+
+        const socket = io();
+
+        socket.on("connect", () => {
+            const userId = socket.id;
+            console.log(`${userId} acabou de entrar no jogo!`);
+        });
+
+        socket.on("type", (state) => {
+            console.log("Olha o que eu recebi", state);
+            document.querySelector("#password").value = state;
+        });
+
+    </script>
+</body>
+</html>
