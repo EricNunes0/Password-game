@@ -1,5 +1,7 @@
 export default function ruleCheck({id}) {
-    let password = $("#password").val();
+    let password = $("#password").text();
+    const romans = ["I", "V", "X", "L","C", "D", "M"];
+    console.log(password)
     if(id === 5) {
         password = password.trim().split("");
         let sum = 0;
@@ -18,24 +20,12 @@ export default function ruleCheck({id}) {
         };
         return false;
     } else if(id === 7) {
-        password = password.trim().split("");
-        let primo = false;
-        for(const letter of password) {
-            if(/[0-9]/.test(letter)) {
-                let n = parseInt(letter);
-                let divisores = 0;
-                for(let i = 1; i <= n; i++) {
-                    if(parseInt(letter) % i == 0) {
-                        divisores++;
-                    };
-                };
-                if(divisores === 2) {
-                    primo = true;
-                    break;
-                };
+        for(const roma of romans) {
+            if(password.includes(roma)) {
+                return true;
             };
         };
-        return primo;
+        return false;
     } else if(id === 8) {
         const planets = ["mercúrio", "vênus", "terra", "marte","júpiter", "saturno", "urano", "netuno"]
         for(const planet of planets) {
@@ -44,5 +34,35 @@ export default function ruleCheck({id}) {
             };
         };
         return false;
-    } ;
+    } else if(id === 9) {
+        password = password.trim().split("");
+        let mult = 1;
+        for(let letter of password) {
+            if(romans.includes(letter)) {
+                letter = roman(letter);
+                mult = mult * parseInt(letter);
+            };
+        };
+        console.log("Mult", mult);
+        return (mult === 25);;
+    };
+};
+
+function roman(letter) {
+    if(letter === "I") {
+        letter = 1;
+    } else if(letter === "V") {
+        letter = 5;
+    } else if(letter === "X") {
+        letter = 10;
+    } else if(letter === "L") {
+        letter = 50;
+    } else if(letter === "C") {
+        letter = 100;
+    } else if(letter === "D") {
+        letter = 500;
+    } else if(letter === "M") {
+        letter = 1000;
+    }
+    return letter;
 };

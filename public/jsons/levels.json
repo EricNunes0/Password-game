@@ -2,35 +2,48 @@
     "levels": [
         {
             "id": 1,
-            "description": "Sua senha precisa ter pelo menos 5 caracteres."
+            "description": "Sua senha precisa ter pelo menos 5 caracteres.",
+            "completed": false
         },
         {
             "id": 2,
-            "description": "Sua senha precisa incluir um número."
+            "description": "Sua senha precisa incluir um número.",
+            "completed": false
         },
         {
             "id": 3,
-            "description": "Sua senha precisa incluir um caractere especial."
+            "description": "Sua senha precisa incluir um caractere especial.",
+            "completed": false
         },
         {
             "id": 4,
-            "description": "Sua senha precisa incluir uma letra maiúscula."
+            "description": "Sua senha precisa incluir uma letra maiúscula.",
+            "completed": false
         },
         {
             "id": 5,
-            "description": "A soma dos números da sua senha precisa ser igual a 25."
+            "description": "A soma dos números da sua senha precisa ser igual a 25.",
+            "completed": false
         },
         {
             "id": 6,
-            "description": "Sua senha precisa incluir o nome de um mês do ano."
+            "description": "Sua senha precisa incluir o nome de um mês do ano.",
+            "completed": false
         },
         {
             "id": 7,
-            "description": "Sua senha precisa incluir ao menos um número primo."
+            "description": "Sua senha precisa incluir ao menos um número romano.",
+            "completed": false
         },
         {
             "id": 8,
-            "description": "Sua senha precisa incluir o nome de um planeta do Sistema Solar."
+            "description": "Sua senha precisa incluir o nome de um planeta do Sistema Solar.",
+            "completed": false
+        },
+        {
+            "id": 9,
+            "description": "O resultado da multiplicação dos números romanos precisa ser 25.",
+            "completed": false
         }
     ]
 }

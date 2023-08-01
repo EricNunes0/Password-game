@@ -1,12 +1,15 @@
+import levelsJSON from "../jsons/levels.json" assert {type: "json"};
 import disableRuleBlock from "./disableRuleBlock.js";
 import enableRuleBlock from "./enableRuleBlock.js";
+import getCurrentRuleBlock from "./getCurrentRuleBlock.js";
 import ruleCheck from "./ruleCheck.js";
 import { playerStats } from "./playerStats.js";
+import swapRuleBlocks from "./swapRuleBlocks.js";
 import warningCalculate from "./warningCalculate.js";
 
 export default function onType() {
     $("#password").keyup(function(k) {
-        let password = $("#password").val();
+        let password = $("#password").text();
         $("#password-span").text(`${password.length}`);
         let specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~¨°]/;
         const levels = [
@@ -28,7 +31,7 @@ export default function onType() {
             },
             {
                 "id": 5,
-                "rule": ruleCheck({id: 5})
+                "rule": ruleCheck({id: 5}),
             },
             {
                 "id": 6,
@@ -41,21 +44,32 @@ export default function onType() {
             {
                 "id": 8,
                 "rule": ruleCheck({id: 8})
+            },
+            {
+                "id": 9,
+                "rule": ruleCheck({id: 9})
             }
         ];
 
-        for(const level of levels) {
-            //console.log(level.id, level.rule, playerStats);
-            if(level.id <= playerStats.level) {
-                $(`#password-rule-${level.id}`).css("display", "block");
+        for(let i = 1; i <= levels.length; i++) {
+            if(i <= playerStats.level) {
+                $(`#password-rule-${i}`).css("display", "block");
             };
-            if(level.rule === true) {
-                enableRuleBlock({id: level.id});
-                if(level.id === playerStats.level) {
-                    playerStats.level++;
-                }
-            } else {
-                disableRuleBlock({id: level.id});
+        };
+
+        for(const level of levels) {
+            if(playerStats.level >= level.id) {
+                $(`#password-rule-${level.id}`).css("display", "block");
+                if(level.rule === true) {
+                    levelsJSON.levels[level.id - 1].completed = true;
+                    enableRuleBlock({id: level.id});
+                    if(level.id === playerStats.level) {
+                        playerStats.level++;
+                    };
+                } else {
+                    levelsJSON.levels[level.id - 1].completed = false;
+                    disableRuleBlock({id: level.id});
+                };
             };
         };
         warningCalculate();

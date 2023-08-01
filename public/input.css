@@ -36,6 +36,7 @@ label, input {
     }
 }
 #password-background {
+    pointer-events: none;
     position: absolute;
     z-index: 0;
     width: 100%;
@@ -301,14 +302,21 @@ label, input {
     word-break: break-all;
     word-wrap: break-word;
     white-space: break-spaces;
+    font-family: monospace;
     font-size: 16pt;
     padding: 10px;
+    background-color: #fff;
     border: 1px solid #a0a0a0;
     border-radius: 10px;
     contain: layout;
 }
 #password:focus {
     outline: 1px solid #000000a0;
+}
+
+/* Letras 5 */
+.letter-5 {
+    color: #f02020;
 }
 
 /* Alinhar input e contador */

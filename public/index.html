@@ -46,7 +46,7 @@
             <div id = "password-div">
                 <label for = "password">Insira a sua senha</label>
                 <div id = "password-flex">
-                    <input type = "text" id = "password"></input>
+                    <div contenteditable = "true" translate="no" type = "text" id = "password"></div>
                     <div id = "password-span-div">
                         <span id = "password-span">0</span>
                     </div>
@@ -57,11 +57,13 @@
             </div>
         </div>
     </div>
+    
     <script type = "text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type = "module">
         import createRuleBlocks from "./scripts/createRuleBlocks.js";
         import onType from "./scripts/onType.js";
         import scrollUpClick from "./scripts/scrollUpClick.js";
+        import swapRuleBlocks from "./scripts/swapRuleBlocks.js";
         import warningClick from "./scripts/warningClick.js";
         import windowScroll from "./scripts/windowScroll.js";
         createRuleBlocks();

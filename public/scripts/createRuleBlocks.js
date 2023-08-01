@@ -3,7 +3,7 @@ import levelsJSON from "../jsons/levels.json" assert {type: "json"};
 export default function createRuleBlocks() {
     const rulesDiv = $("#password-rules-div");
 
-    for(const level of levelsJSON.levels) {
+    for(const level of levelsJSON.levels.reverse()) {
         rulesDiv.append(`
     <a href = "#password-rule-${level.id}" class = "password-anchors"></a>
     <div class = "password-rules-containers red" id = "password-rule-${level.id}" style = "display: none; opacity: 0;">
